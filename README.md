@@ -1,4 +1,4 @@
-[![N](http://chaos.echo19.com/images/email/echo19logo_blue_text_no_backgroundX200.png)](https://echo19.com/)
+[![N](http://chaos.echo19.com/images/email/echo19logo_blue_text_no_backgroundX200.png)](https://echo19.com/ =200x)
 
 # echo19 web survey 
 [repo] by [kridlet]
