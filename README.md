@@ -6,7 +6,7 @@ echo19, a progressive political communications and research platform, conducts l
 
 Currently, SMS survey recruitment is for 3rd party survey instruments. In order to facilitate a tighter integration with the existing echo19 suite of research tools, I will create the echo19 web survey.
 
-echo19 web survey will integrate the existing echo19 PHP/Yii/MySQL survey design, list management, and scheduling features with a new SMS recruitment and survey delivery system built using Node.js, Express.js, React, and Sequelize. handle individualized link generation,  is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
+echo19 web survey will integrate the existing echo19 PHP/Yii/MySQL survey design, list management, and scheduling features with a new SMS recruitment and survey delivery system built using Node.js, Express.js, React, and Sequelize.
 
 ### Existing Infrastructure
   - MySQL database running on AWS RDS
