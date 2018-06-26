@@ -23,6 +23,8 @@ echo19 web survey will integrate the existing echo19 PHP/Yii/MySQL survey design
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework [@tjholowaychuk]
 
+<img src="http://chaos.echo19.com/images/email/mobile-screens.png" width="200px" />
+
 ### Todos
  - Create React components for survey delivery
  - Create Sequelize queries for survey data retreival
