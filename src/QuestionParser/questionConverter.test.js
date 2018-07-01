@@ -1,5 +1,5 @@
 import questionConverter from './questionConverter';
-import dbQuestions from '../../research/treeizeData';
+import dbQuestions from '../research/treeizeData';
 
 describe('questionConverter tests', () => {
   test('ids are string values', () => {

@@ -1,8 +1,43 @@
 import QuestionParser from './QuestionParser';
 
-import dbQuestions from '../../research/treeizeData';
+import dbQuestions from '../research/treeizeData';
 
 describe('questionParser tests', () => {
+  describe('question parser tests', () => {
+    const questionParser = new QuestionParser(dbQuestions);
+    // test('gets next question from parent', () => {
+    //   expect(questionParser.getAnswerQuestions('1.1.1').id).toBe('q3');
+    // });
+
+    // test('get\'s parent\'s next question if question doesn\'t have child questions', () => {
+    //   expect(questionParser.getAnswerQuestions('1.2').id).toBe('q3');
+    // });
+
+    test('can get first question', () => {
+      expect(questionParser.getFirstQuestion().id).toBe('35767');
+    });
+
+    test('will return false if the next question does not exist', () => {
+      expect(questionParser.getAnswerQuestions('35774-1')).toBe(false);
+    });
+
+    test('can get the next question after a click if the answer has addtestional questions', () => {
+      expect(questionParser.getAnswerQuestions('159364').id).toBe('35774');
+    });
+
+    test('has question array', () => {
+      expect(questionParser.questions.length).toBeGreaterThan(0);
+    });
+
+    test('can be constructed', () => {
+      expect(typeof questionParser).toBe('object');
+    });
+  });
+
+
+  // older tests below...
+
+
   test('skips if a goto is the action', () => {
     const qp = new QuestionParser(dbQuestions);
     expect(qp.getNextQuestion('159360').id).toBe('35774');

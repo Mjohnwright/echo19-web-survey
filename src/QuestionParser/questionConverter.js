@@ -6,7 +6,7 @@ export default (dbQuestions) => {
       questionText: item.nameLong,
       questionHelp: item.nameLong,
     };
-    // if / else statement to fix data without any options...
+    // if / else statement to fix questions without any answers - i.e. statements
     if (item.answers) {
       newSurveyItem.questionOptions = [];
       item.answers.forEach((answer) => {

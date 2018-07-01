@@ -3,6 +3,11 @@ import questionConverter from './questionConverter';
 export default class QuestionParser {
   constructor(questions) {
     this.questions = questionConverter(questions);
+    this.getAnswerQuestions = this.getNextQuestion;
+  }
+
+  getFirstQuestion() {
+    return this.questions[0];
   }
 
   getNextQuestion = (id) => {

@@ -1,4 +1,8 @@
 import React from 'react';
+import { HashRouter as Router } from 'react-router-dom';
+
+import SurveyContainer from './components/Survey/SurveyContainer';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,13 +14,11 @@ const App = () => (
         Welcome to React
       </h1>
     </header>
-    <p className="App-intro">
-      To get started, edit
-      <code>
-        src/App.js
-      </code>
-      and save to reload.
-    </p>
+    <div className="App-intro">
+      <Router>
+        <SurveyContainer />
+      </Router>
+    </div>
   </div>
 );
 
