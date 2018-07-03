@@ -1,0 +1,31 @@
+{
+  "dev": {
+    "username": "root",
+    "database": "echo19",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  },
+  "test": {
+    "username": "zmupfoakzmjrpl",
+    "database": "d7r7dcare504sj",
+    "host": "ec2-23-23-226-190.compute-1.amazonaws.com",
+    "maxConcurrentQueries": 100,
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  },
+  "production": {
+    "username": "zmupfoakzmjrpl",
+    "database": "d7r7dcare504sj",
+    "host": "ec2-23-23-226-190.compute-1.amazonaws.com",
+    "maxConcurrentQueries": 200,
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+    }
+  }
+}

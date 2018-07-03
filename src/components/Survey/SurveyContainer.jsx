@@ -3,7 +3,9 @@ import { Route, Switch, Link } from 'react-router-dom';
 
 import Question from './Question/Question';
 import QuestionParser from '../../QuestionParser/QuestionParser';
-import questions from '../../research/treeizeData'; // move to api call later...
+import survey from '../../research/treeizeData'; // move to api call later...
+
+const questions=survey.questions;
 
 export default class SurveyContainer extends React.Component {
   constructor(props) {
@@ -31,8 +33,8 @@ export default class SurveyContainer extends React.Component {
               <div>
                 <Link to="/start" href="/start">
                   <h1>Let&#39;s get started</h1>
+                  <p>{survey.intro}</p>
                 </Link>
-                <a href="/#/start" className="btn btn-primary btn-block">Go!</a>
               </div>
             )}
           />

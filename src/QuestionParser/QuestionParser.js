@@ -17,6 +17,9 @@ export default class QuestionParser {
       const option = this.questions[index].questionOptions[optionIndex];
       if (option) {
         if (option.action) {
+          if (option.action === 'BYE') {
+            return (false);
+          }
           if (option.action.split('=')[1]) {
             [, gotoQuestion] = option.action.split('=');
           }

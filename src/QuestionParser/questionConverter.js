@@ -3,10 +3,11 @@ export default (dbQuestions) => {
   dbQuestions.forEach((item) => {
     const newSurveyItem = {
       id: String(item.surveyQuestionId),
+      intro: dbQuestions.intro,
       questionText: item.nameLong,
       questionHelp: item.nameLong,
     };
-    // if / else statement to fix questions without any answers - i.e. statements
+    // if / else statement to handle questions without any answers - i.e. statements
     if (item.answers) {
       newSurveyItem.questionOptions = [];
       item.answers.forEach((answer) => {

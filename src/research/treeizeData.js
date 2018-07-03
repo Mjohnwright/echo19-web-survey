@@ -1,6 +1,6 @@
 import Treeize from 'treeize';
 
-const survey = new Treeize();
+const surveyT = new Treeize();
 
 const testData = [{
   callId: 18940,
@@ -598,5 +598,8 @@ const testData = [{
 },
 ];
 
-const questions = survey.grow(testData).getData()[0].questions;
-export default questions;
+const survey = { questions: surveyT.grow(testData).getData()[0].questions };
+survey.intro = testData[0].intro;
+survey.goal = testData[0].goal;
+survey.endMessage = testData[0].endMessage;
+export default survey;

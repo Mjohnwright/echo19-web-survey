@@ -1,34 +1,21 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const session = require('express-session')
-const dontenv = require("dotenv").config();
+// Load the AWS SDK
+const AWS = require('aws-sdk');
 
-const app = express()
-const PORT = process.env.PORT || 5000
-const db = require('./models')
-
-// bodyParser to translate urlform and json
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-
-// Import routes and give the server access to them.
-require('./controllers/api.js')(app)
-
-// handlebars rout to static files - css, img
-app.use(express.static('public'))
-
-// Initiate database interface and start our server so that it can begin listening to client requests.
-db.sequelize.sync()
-  .then(function () {
-    console.log('database sync okay')
-    app.listen(PORT, function (err) {
-      if (!err) {
-        // Log (server-side) when our server has started
-        console.log('Server listening on: http://localhost:' + PORT)
-      } else {
-        console.log(err)
+const getSecretString = (secretName, cb) => {
+  const client = new AWS.SecretsManager({ endpoint: 'https://secretsmanager.us-east-1.amazonaws.com', region: 'us-east-1' });
+  client.getSecretValue({ SecretId: secretName }, (err, data) => {
+    if (err) {
+      if (err.code === 'ResourceNotFoundException') {
+        console.log(`The requested secret ${secretName} was not found`);
+      } else if (err.code === 'InvalidRequestException') {
+        console.log(`The request was invalid due to: ${err.message}`);
+      } else if (err.code === 'InvalidParameterException') {
+        console.log(`The request had invalid params: ${err.message}`);
       }
-    })
-  }).catch(function (err) {
-    console.log(err, 'database synch failed')
-  })
+    } else {
+      cb(data.SecretString);
+    }
+  });
+};
+
+module.exports.getSecretString = getSecretString;

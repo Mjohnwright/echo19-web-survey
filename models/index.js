@@ -3,17 +3,12 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const secrets = require('../keys.js');
 
-const env = process.env.NODE_ENV || 'dev';
-
-const config = require(path.join(__dirname, '/../config/config.json'))[env];
-
 const basename = path.basename(__filename);
 const db = {};
-const secretName = 'apacheWeb-chaos.echo19.com';
+const secretName = 'chaos-rw-chaos.echo19.com';
 
 const initDb = (secretString) => {
   const secretJSON = JSON.parse(secretString);
-  // console.log(secretJSON);
 
   const sequelize = new Sequelize(secretJSON.dbname, secretJSON.username, secretJSON.password, secretJSON);
 
@@ -35,7 +30,7 @@ const initDb = (secretString) => {
 
   db.sequelize = sequelize;
   db.Sequelize = Sequelize;
-
+  // console.log(db);
   module.exports = db;
 };
 

@@ -12,9 +12,10 @@ describe('survey container tests', () => {
   });
 
   test('has link to first question', () => {
-    const wrapper = shallow(<Router><SurveyContainer /></Router>);
-    expect(wrapper.html()).toContain('Let&#x27;s get started');
-    expect(wrapper.html()).toContain('href="#/start"');
+    const wrapper = mount(<Router><SurveyContainer /></Router>);
+    expect(wrapper.html()).toMatch(/Let\'s get started/);
+    expect(wrapper.text()).toMatch(/Hello! This is \[volunteer name\] from Chocolate Cows with a brief 3/);
+    expect(wrapper.html()).toMatch(/href="#\/start"/);
   });
 
   test('survey container has routes', () => {
