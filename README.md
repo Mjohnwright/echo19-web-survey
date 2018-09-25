@@ -4,9 +4,9 @@
 
 echo19, a progressive political communications and research platform, conducts large scale surveys via automated and live phone interviews, and large scale survey recruitment via distributed human SMS delivery.
 
-Currently, SMS survey recruitment is for 3rd party survey instruments. In order to facilitate a tighter integration with the existing echo19 suite of research tools, I will create the echo19 web survey.
+Currently, SMS survey recruitment is for 3rd party survey instruments. In order to facilitate a tighter integration with the existing echo19 suite of research tools, this echo19 web survey platform will directly host surveys. This will allow partners to conduct research using automated telephony, live-operator phone, and web survey all withiin the same, familiar platform.
 
-echo19 web survey will integrate the existing echo19 PHP/Yii/MySQL survey design, list management, and scheduling features with a new SMS recruitment and survey delivery system built using Node.js, Express.js, React, and Sequelize.
+echo19 web survey will integrate the existing echo19 PHP/Yii/MySQL survey design, list management, and scheduling features with a new SMS recruitment and survey delivery system built using PHP, Node.js, Express.js, and React.
 
 ### Existing Infrastructure
   - MySQL database running on AWS RDS
